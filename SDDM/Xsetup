@@ -1,0 +1,6 @@
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+# Place in /usr/share/sddm/scripts
+
+xrandr --output DP-1-2 --off
+xrandr --output DP-1-3 --off
