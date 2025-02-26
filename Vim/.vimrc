@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursor'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 "SETTINGS"
