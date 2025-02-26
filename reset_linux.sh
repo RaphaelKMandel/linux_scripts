@@ -2,8 +2,8 @@
 cp /etc/skel/.bashrc ~/.bashrc
 echo "source ~/linux_scripts/Bash/bashprofile.sh" >> ~/.bashrc
 
-# Set Up Git
-cp ~/linux_scripts/GIT/.gitconfig ~/.gitconfig
+# Set Up Git Config
+./GIT/setup_config.sh
 
 # Installs
 ./InstallScripts/install.sh
