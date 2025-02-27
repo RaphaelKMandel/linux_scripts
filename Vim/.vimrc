@@ -100,6 +100,12 @@
 	nmap <C-j> <C-w>j
 	nmap <C-k> <C-w>k
 
+    nmap <C-down> <C-w>+
+    nmap <C-up> <C-w>-
+    nmap <C-left> <C-w><
+    nmap <C-right> <C-w>>
+
+
 	"Remapping Control-R to capital U"
 	nnoremap U <C-r>
 
