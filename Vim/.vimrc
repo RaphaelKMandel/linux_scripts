@@ -54,71 +54,24 @@
 
 "PLUGIN CONFIGURATION"
 	let g:highlightedyank_highlight_duration=200
-
-	" GREY = #CCCCCC
-	" DARKGREY = #444444
-	" YELLOW = #cccc00
-	" ORANGE = #F67126
-	" BLUE = #2ACCF5
-	" DARKBLUE = #10003a
-	" GREEN = #A6E22E
-	" RED = #FF0000
-	" PURPLE = #ccaaFF
-	" BLACK = #000000
-	" LIGHTBLACK = #222222
-
-
-    highlight Normal guifg=#CCCCCC guibg=#10003a
-    highlight NormalNC guifg=#CCCCCC guibg=#10003a
-
-    highlight TabLine guifg=#444444 guibg=#000000
-    highlight TabLineSel guifg=#CCCCCC guibg=#10003a
-    highlight MatchParen guifg=#2ACCF5 gui=underline
-
-    highlight CursorLine guibg=#444444
-    highlight CursorLineNr guifg=#cccc00
-    highlight LineNr guifg=#CCCCCC
-    highlight WinSeparator  guifg=#2accf5
-    highlight ColorColumn  guibg=#cccccc  "Divider at 120 chars
-
-    highlight Visual guibg=#444444 
-	highlight HighlightedyankRegion guifg=black guibg=#CCCC00
- 
-    highlight operator guifg=#F67126
-    highlight Special guifg=#F67126"
-    highlight PreProc guifg=#F67126"
-    highlight comment guifg=#ccaaff
-    " highlight identifier guifg=#CCCCCC
-    highlight identifier guifg=#F67126
-
-    "LITERALS
-    highlight Constant guifg=#cccc00
-    highlight Character guifg=#cccc00
-    highlight String guifg=#cccc00
-    highlight Number guifg=#cccc00
-    highlight Float guifg=#cccc00
-    highlight Boolean guifg=#cccc00
-
-    "KEYWORDS
-    highlight Keyword guifg=#2accf5
-    highlight Include guifg=#2accf5 "Import
-    highlight Typedef guifg=#2accf5 "Class
-    highlight Conditional guifg=#2accf5 "If
-    highlight Define guifg=#2accf5 "Define
-    highlight Repeat guifg=#2accf5 "For/while
-    highlight Exception guifg=#2accf5 "Try/Except
-    highlight Statement guifg=#2accf5  "General statement words
-
-    "FUNCTIONS
-    highlight Type guifg=#a6e22e
-    highlight Function guifg=#a6e22e
-
-
-
-
-
 	nnoremap <silent> <space> :silent WhichKey '<space>'<CR>
 
+
+"CURSOR CHANGE
+    set ttimeout
+    set ttimeoutlen=1
+    set ttyfast
+
+    if has("autocmd")
+        au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+        au InsertEnter,InsertChange *
+                    \ if v:insertmode == 'i' |
+                    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+                    \ elseif v:insertmode == 'r' |
+                    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+                    \ endif
+        au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+    endif
 
 
 "INSERT MODE"
@@ -218,3 +171,62 @@
 	nmap <leader><leader>{ I{<Esc>A}<Esc>j
 	nmap <leader><leader>} <leader>{
 
+
+"COLORSCHEME
+	" GREY = #CCCCCC
+	" DARKGREY = #444444
+	" YELLOW = #cccc00
+	" ORANGE = #F67126
+	" BLUE = #2ACCF5
+	" DARKBLUE = #10003a
+	" GREEN = #A6E22E
+	" RED = #FF0000
+	" PURPLE = #ccaaFF
+	" BLACK = #000000
+	" LIGHTBLACK = #222222
+
+    highlight Normal guifg=#CCCCCC guibg=#10003a
+    highlight NormalNC guifg=#CCCCCC guibg=#10003a
+
+    highlight TabLine guifg=#444444 guibg=#000000
+    highlight TabLineSel guifg=#CCCCCC guibg=#10003a
+    highlight MatchParen guifg=#2ACCF5 gui=underline
+
+    highlight CursorLine guibg=#444444
+    highlight CursorLineNr guifg=#cccc00
+    highlight LineNr guifg=#CCCCCC
+    highlight WinSeparator  guifg=#2accf5
+    highlight ColorColumn  guibg=#cccccc  "Divider at 120 chars
+
+	highlight Pmenu guibg=#444444
+
+    highlight Visual guibg=#444444 
+	highlight HighlightedyankRegion guifg=black guibg=#CCCC00
+ 
+    highlight operator guifg=#F67126
+    highlight Special guifg=#F67126"
+    highlight PreProc guifg=#F67126"
+    highlight comment guifg=#ccaaff
+    highlight identifier guifg=#F67126
+
+    "LITERALS
+    highlight Constant guifg=#cccc00
+    highlight Character guifg=#cccc00
+    highlight String guifg=#cccc00
+    highlight Number guifg=#cccc00
+    highlight Float guifg=#cccc00
+    highlight Boolean guifg=#cccc00
+
+    "KEYWORDS
+    highlight Keyword guifg=#2accf5
+    highlight Include guifg=#2accf5 "Import
+    highlight Typedef guifg=#2accf5 "Class
+    highlight Conditional guifg=#2accf5 "If
+    highlight Define guifg=#2accf5 "Define
+    highlight Repeat guifg=#2accf5 "For/while
+    highlight Exception guifg=#2accf5 "Try/Except
+    highlight Statement guifg=#2accf5  "General statement words
+
+    "FUNCTIONS
+    highlight Type guifg=#a6e22e
+    highlight Function guifg=#a6e22e
