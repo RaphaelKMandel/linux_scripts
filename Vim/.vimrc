@@ -9,21 +9,112 @@
 
 
 "SETTINGS"
-	set scrolloff=10
-	set incsearch
+	set clipboard+=unnamed
 	set number 
 	set mouse=a
 	set ruler
 	set ignorecase
 	set showmode
 	set paste
-	set clipboard+=unnamed
 
+	set tabstop=4
+	set shiftwidth=4
+	set softtabstop=4
+	set expandtab
+	set autoindent
+	set smartindent
+	set nowrap
+
+	set incsearch
+    set ignorecase
+    set smartcase
+    set nohlsearch
+    set cursorline
+    set signcolumn=yes
+	set colorcolumn=120 "EOL
+    set cmdheight=1
+    set scrolloff=10
+    set sidescrolloff=10
+    set completeopt=menuone
+
+    set hidden
+    set noerrorbells
+    set noswapfile
+    set undofile
+    set backspace=indent,eol,start
+    set splitright
+    set splitbelow
+    set noautochdir
+    set modifiable
+    set encoding=utf-8
+    set numberwidth=4
+
+    set termguicolors
 
 
 "PLUGIN CONFIGURATION"
 	let g:highlightedyank_highlight_duration=200
-	highlight HighlightedyankRegion cterm=reverse gui=reverse
+
+	" GREY = #CCCCCC
+	" DARKGREY = #444444
+	" YELLOW = #cccc00
+	" ORANGE = #F67126
+	" BLUE = #2ACCF5
+	" DARKBLUE = #10003a
+	" GREEN = #A6E22E
+	" RED = #FF0000
+	" PURPLE = #ccaaFF
+	" BLACK = #000000
+	" LIGHTBLACK = #222222
+
+
+    highlight Normal guifg=#CCCCCC guibg=#10003a
+    highlight NormalNC guifg=#CCCCCC guibg=#10003a
+
+    highlight TabLine guifg=#444444 guibg=#000000
+    highlight TabLineSel guifg=#CCCCCC guibg=#10003a
+    highlight MatchParen guifg=#2ACCF5 gui=underline
+
+    highlight CursorLine guibg=#444444
+    highlight CursorLineNr guifg=#cccc00
+    highlight LineNr guifg=#CCCCCC
+    highlight WinSeparator  guifg=#2accf5
+    highlight ColorColumn  guibg=#cccccc  "Divider at 120 chars
+
+    highlight Visual guibg=#444444 
+	highlight HighlightedyankRegion guifg=black guibg=#CCCC00
+ 
+    highlight operator guifg=#F67126
+    highlight Special guifg=#F67126"
+    highlight PreProc guifg=#F67126"
+    highlight comment guifg=#ccaaff
+    " highlight identifier guifg=#CCCCCC
+    highlight identifier guifg=#F67126
+
+    "LITERALS
+    highlight Constant guifg=#cccc00
+    highlight Character guifg=#cccc00
+    highlight String guifg=#cccc00
+    highlight Number guifg=#cccc00
+    highlight Float guifg=#cccc00
+    highlight Boolean guifg=#cccc00
+
+    "KEYWORDS
+    highlight Keyword guifg=#2accf5
+    highlight Include guifg=#2accf5 "Import
+    highlight Typedef guifg=#2accf5 "Class
+    highlight Conditional guifg=#2accf5 "If
+    highlight Define guifg=#2accf5 "Define
+    highlight Repeat guifg=#2accf5 "For/while
+    highlight Exception guifg=#2accf5 "Try/Except
+    highlight Statement guifg=#2accf5  "General statement words
+
+    "FUNCTIONS
+    highlight Type guifg=#a6e22e
+    highlight Function guifg=#a6e22e
+
+
+
 
 
 	nnoremap <silent> <space> :silent WhichKey '<space>'<CR>
