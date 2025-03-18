@@ -1,0 +1,14 @@
+[Unit]
+Description=HAOS
+After=network.target
+
+[Service]
+Type=simple
+User=homeassistant
+ExecStart=/usr/bin/VBoxHeadless --startvm "HAOS"
+ExecStop=/usr/bin/VBoxManage controlvm "HAOS" acpipowerbutton
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
