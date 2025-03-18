@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=homeassistant
+User=mandels
 ExecStart=/usr/bin/VBoxHeadless --startvm "HAOS"
 ExecStop=/usr/bin/VBoxManage controlvm "HAOS" acpipowerbutton
 Restart=always
