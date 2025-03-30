@@ -8,6 +8,9 @@
 [pull]
 	rebase = true
 
+[credential]
+	helper = store
+
 
 [alias]
 	loga = 'log --oneline --graph --all'
