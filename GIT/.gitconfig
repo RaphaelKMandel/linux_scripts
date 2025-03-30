@@ -3,7 +3,11 @@
 	email = raphael.k.mandel@gmail.com
 
 [core]
-  editor = nvim
+	editor = nvim
 
-[credential]
-    helper = store
+[pull]
+	rebase = true
+
+
+[alias]
+	loga = 'log --oneline --graph --all'
