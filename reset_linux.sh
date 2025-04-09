@@ -1,11 +1,10 @@
 # Set Up ~/.bashrc
 cp /etc/skel/.bashrc ~/.bashrc
-echo "source ~/linux_scripts/Bash/bashprofile.sh" >> ~/.bashrc
+cd ~
+git clone https://github.com/RaphaelKMandel/dotfiles .
 
-# Set Up Git Config
-./GIT/setup_config.sh
 
 # Installs
-./InstallScripts/install.sh
-./InstallScripts/install_neovim.sh
+~/linux_scripts/InstallScripts/install.sh
+~/linux_scripts/InstallScripts/install_neovim.sh
 
